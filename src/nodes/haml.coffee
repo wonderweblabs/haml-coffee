@@ -360,7 +360,7 @@ module.exports = class Haml extends Node
                |
                [{,]\s*:(\w+[\w:-]*\w?)\s*=>
                |
-               [{,]\s*:?'([-\w]+[\w:-]*\w?)'\s*=>
+               [{,]\s*:?'([-\w:]+[\w\.:-]*\w?)'\s*=>
                |
                [{,]\s*:?"([-\w]+[\w:-]*\w?)"\s*=>
                ///g
@@ -383,7 +383,8 @@ module.exports = class Haml extends Node
       # Attribute with value or multiple attributes
       else
         # Trim key and remove preceding colon and remove markers
-        key = keyValue[0]?.replace(/^\s+|\s+$/g, '').replace(/^:/, '')
+        # key = keyValue[0]?.replace(/^\s+|\s+$/g, '').replace(/^:/, '')
+        key = keyValue[0]?.replace(/^\s+|\s+$/g, '')
         key = quoted[2] if quoted = key.match /^("|')(.*)\1$/
 
         # Trim value, remove succeeding comma and remove markers
