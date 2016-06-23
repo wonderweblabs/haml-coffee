@@ -360,9 +360,9 @@ module.exports = class Haml extends Node
                |
                [{,]\s*:(\w+[\w:-]*\w?)\s*=>
                |
-               [{,]\s*:?'([-\w:]+[\w\.:-]*\w?)'\s*=>
+               [{,]\s*:?'([-\w:@]+[\w\.:-]*\w?)'\s*=>
                |
-               [{,]\s*:?"([-\w]+[\w:-]*\w?)"\s*=>
+               [{,]\s*:?"([-\w:@]+[\w\.:-]*\w?)"\s*=>
                ///g
 
     # Split into key value pairs
